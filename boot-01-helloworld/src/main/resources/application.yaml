@@ -1,0 +1,35 @@
+person:
+ userName: 張
+ boss: true
+ birth: 1989/07/23
+ age: 18
+ interests:
+   - 篮球
+   - 足球
+   - 游戏
+   - 开车
+ animal: 
+    - jerry
+    - mario
+ score:
+    english: 
+      first: 30
+      second: 40
+      third: 50
+    math: [131,140,148]
+    chinese: {first: 128,second: 136}
+ salarys: [9999, 12999, 39999]
+ pet:
+  name: 阿黄
+  weight: 22.3
+ allPets:
+  sick:
+   - {name: tom, weight: 12.8}
+   - name: jerry
+     weight: 11.0
+  health:
+   - {name: liu, weight: 222.0}
+   - {name: 222, weight: 22.2}
+ 
+  
+   

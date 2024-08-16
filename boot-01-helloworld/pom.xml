@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.zhang</groupId>
+  <artifactId>boot-01-helloworld</artifactId>
+  <packaging>jar</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>boot-01-helloworld Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <!--父工程导入-->
+  <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.4.RELEASE</version>
+    </parent>
+
+  
+  <dependencies>
+	<!--web场景启动器导入-->
+	 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        
+        <!-- Lombok 依赖项 -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.28</version>
+        <scope>provided</scope>
+    </dependency>
+    <!-- 项目热更新 -->
+    <dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-devtools</artifactId>
+	    <optional>true</optional>
+	</dependency>
+	
+	<!--　yaml配置时的提示-->
+	<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+    </dependency>
+  </dependencies>
+  
+  
+   <build>
+	<plugins>
+            <plugin>
+				<!--把项目打成jar包，直接在目标服务器执行即可。简化部署-->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- yaml 配置data后，打包时候不要这个jar包-->
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-configuration-processor</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    <finalName>boot-01-helloworld</finalName>
+  </build>
+
+</project>
