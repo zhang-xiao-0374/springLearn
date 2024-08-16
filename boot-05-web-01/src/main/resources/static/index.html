@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>張暁宇、ようこそ</title>
+</head>
+<body>
+	测试REST风格
+	<form action="/user" method="get">
+		<input value="REST-GET 提交" type="submit"/>  
+	</form>
+	<form action="/user" method="post">
+		<input value="REST-POST 提交" type="submit"/>  
+	</form>
+	<form action="/user" method="post">
+		<input name="_method" type="hidden" value="DELETE"/>
+		<input value="REST-DELETE 提交" type="submit"/>  
+	</form>
+	<form action="/user" method="post">
+		<input name="_m" type="hidden" value="PUT"/>
+		<input value="REST-PUT 提交" type="submit"/>  
+	</form>
+	<hr/>
+	<url>
+		<h2>通过注解获取参数</h2>
+		<a href = "/car/1/owner/張暁宇?age=18&bith=1989/07/23&sex=male">/car/{id}/owner/{username}</a>
+		<li>@PathVariable (路径变量)</li>
+		<li>@RequestHeader (获取请求头)</li>
+		<li>@RequestParam (获取请求参数)</li>
+		<li>@CookieValue (获取cookie值)</li>
+		<li>@RequestAttribute (获取request域属性)</li>
+		<li>@RequestBody (获取请求体)</li>
+		<li>@MatrixVariable (矩阵变量)</li>
+	</url>	
+	<hr/>
+	<form action="/save" method="post">
+			UserName<input name="user"/>
+			E-mail<input name="メール"/>
+			<input value="登録" type="submit"/>  
+		</form>
+		<hr/>
+		<h2>矩阵变量@MatrixVariable</h2>
+		<a href="/cars/sell;low=34;brand=byd,audi,toyota">矩阵变量@MatrixVariable</a>
+		<a href="/cars/sell;low=34;brand=byd,brand=audi;brand=toyota">矩阵变量@MatrixVariable</a>
+		<a href="/boss/1;age=34/2;age=10">矩阵变量@MatrixVariable/boss/{bossId}/{empId}</a>
+		
+		<hr/>
+		<h3>测试复杂类型</h3>
+		测试封装POJO
+		<form action="/saveuser" method="post">
+			名前：<input name="username" value="張暁宇"><br/>
+			年龄： <input name="age" value="12"/> <br/>
+			生日： <input name="birth" value="1989/7/23"/> <br/>
+			宠物姓名：<input name="pet2.name" 			value="阿毛1"/><br/>
+			宠物年龄：<input name="pet2.age" 			value="1"/>	<br/>
+			宠物：<input name="pet" value="阿毛,10"/>
+			<input type="submit" value="save">
+			
+		</form>
+		
+</body>
+</html>

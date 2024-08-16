@@ -1,0 +1,12 @@
+spring:
+# mvc:
+#  static-path-pattern: /res/**
+ mvc:
+# 开启REST风格
+  hiddenmethod:
+   filter:
+    enabled: true
+  contentnegotiation: 
+   media-types:
+    zhang: application/x-zhang #输出内容的自定义转换器
+   favor-parameter: true # 开启请求参数内容的协商模式
