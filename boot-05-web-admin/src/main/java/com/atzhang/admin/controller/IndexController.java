@@ -2,7 +2,6 @@ package com.atzhang.admin.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -36,12 +35,14 @@ public class IndexController {
 	@GetMapping("/main.html")
 	public String mainPage(HttpSession session, Model model) {
 		Object object = session.getAttribute("loginUser");
-		if(!ObjectUtils.isEmpty(object)) {
+		/*if(!ObjectUtils.isEmpty(object)) {
 			return "main";
 		} else {
 			model.addAttribute("msg", "请重新登录");
 			return "login";
-		}
+		}*/
+		
+		return "main";
 		
 	}
 }
