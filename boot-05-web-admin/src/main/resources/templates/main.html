@@ -21,14 +21,19 @@
 
   <!--Morris Chart CSS -->
   <link rel="stylesheet" href="js/morris-chart/morris.css">
-	<link th:replace="common ::  commonheader">
+	<div th:replace="common ::  commonheader"> </div>
 </head>
 
 <body class="sticky-header">
 
-<section>  
+<section>
+	<div th:replace="common :: #leftmenu"></div>  
     <!-- main content start-->
     <div class="main-content" >
+		<!-- header section start 页面共通的头部信息-->
+		<div th:replace="common :: headermenu"></div>
+		<!-- header section end 页面共通的头部信息-->
+		
         <!-- page heading start-->
         <div class="page-heading">
             <h3>
@@ -563,9 +568,6 @@
 <script src="js/calendar/evnt.calendar.init.js"></script>
 <script src="js/calendar/moment-2.2.1.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-
-<!--common scripts for all pages-->
-<script src="js/scripts.js"></script>
 
 <!--Dashboard Charts-->
 <script src="js/dashboard-chart-init.js"></script>
