@@ -17,6 +17,7 @@ public class TableController {
 		return "table/basic_table";
 	}
 	
+	
 	@GetMapping("/dynamic_table")
 	public String dynamic_table(Model model) {
 		List<User> users = Arrays.asList(new User("野原", "123456"), 
