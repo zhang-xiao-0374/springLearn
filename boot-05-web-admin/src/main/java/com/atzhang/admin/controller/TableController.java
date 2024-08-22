@@ -6,14 +6,23 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.atzhang.admin.bean.User;
+import com.atzhang.admin.exception.UserTooManyException;
 
 @Controller
 public class TableController {
 	
+	/**
+	 * 400: badRequest 没有传递参数或者传递的参数不对
+	 * @param a
+	 * @return
+	 */
 	@GetMapping("/basic_table")
-	public String basic_table() {
+	public String basic_table(@RequestParam("a")int a) {
+		
+		int i = 10/0;
 		return "table/basic_table";
 	}
 	
@@ -26,6 +35,10 @@ public class TableController {
 				new User("本田", "123456"),
 				new User("山本", "123456"));
 		model.addAttribute("users", users);
+		
+		if(users.size() >3) {
+			throw new UserTooManyException();
+		}
 		return "table/dynamic_table";
 	}
 	
